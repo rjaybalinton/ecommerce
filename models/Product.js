@@ -1,5 +1,5 @@
 // models/Product.js
-const db = require('../db');
+const db = require('../config/db');
 
 class Product {
     // Retrieve all products
