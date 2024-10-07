@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop | Electric Scooters</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">Super E-commerce</div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="cart.ejs">My Cart</a></li>
+                <li><a href="about.ejs">About</a></li>
+                <li><a href="contact.ejs">Contact</a></li>
+                <li><a href="login">Log Out</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="products-container">
+            <% if (products && products.length > 0) { %>
+                <% products.forEach(product => { %>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <a href="/product/<%= product.id %>">
+                                <img src="<%= product.image %>" alt="<%= product.name %>">
+                            </a>
+                        </div>
+                        <div class="product-details">
+                            <h2><a href="/product/<%= product.id %>"><%= product.name %></a></h2>
+                            <p><%= product.description %></p>
+                            <!-- Price is assumed to be a decimal from the database -->
+                            <p class="price">Php.<%= parseFloat(product.price).toFixed(2) %></p> 
+                        </div>
+                        <div class="product-options">
+                            <form action="/add-to-cart/<%= product.id %>" method="POST">
+                                <button type="submit">Add to Cart</button>
+                            </form>
+                        </div>
+                    </div>
+                <% }) %>
+            <% } else { %>
+                <p>No products available</p>
+            <% } %>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Super E-commerce. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Your JavaScript code for modals or other interactions if needed
+    </script>
+</body>
+</html>
