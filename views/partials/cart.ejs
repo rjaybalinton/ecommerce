@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart</title>
+    <script src="cart.js"></script>
+</head>
+<body>
+    <h1>Your Shopping Cart</h1>
+    <div id="cart-items"></div>
+
+    <script>
+        function displayCart() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartItemsDiv = document.getElementById('cart-items');
+
+            if (cart.length === 0) {
+                cartItemsDiv.innerHTML = '<p>Your cart is empty!</p>';
+                return;
+            }
+
+            cart.forEach(item => {
+                cartItemsDiv.innerHTML += `
+                    <div>
+                        <h3>${item.name}</h3>
+                        <p>Price: $${item.price}</p>
+                        <p>Quantity: ${item.quantity}</p>
+                    </div>
+                `;
+            });
+        }
+
+        // Display cart items when the page loads
+        window.onload = displayCart;
+    </script>
+</body>
+</html>
