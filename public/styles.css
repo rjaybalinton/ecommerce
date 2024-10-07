@@ -1,0 +1,67 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    color: black;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height for centering */
+}
+
+.container {
+    text-align: center; /* Center text inside the container */
+    width: 100%; /* Take full width */
+    max-width: 400px; /* Limit the maximum width */
+    padding: 20px; /* Add some padding */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow for a better look */
+    background: #f4f4f4; /* Light background for the container */
+    border-radius: 5px; /* Rounded corners */
+}
+
+h1 {
+    color: black; /* Red font for headings */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+form {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: space-between; /* Space between elements */
+    height: 300px; /* Fixed height for the form */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    background: red; /* Red background for buttons */
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: auto; /* Push button to the bottom */
+}
+
+button:hover {
+    background: darkred; /* Darker red on hover */
+}
+
+a {
+    display: block; /* Each link on a new line */
+    margin-top: 10px; /* Space above links */
+    color: red; /* Red links */
+    text-decoration: none; /* No underline */
+}
+
+a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
